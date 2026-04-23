@@ -57,6 +57,7 @@ dengue-predictor/
 ---
 
 
+
 # 🚀 Web App Handover Instructions (React Team)
 
 The model is ready to be integrated into the React application via a Python backend (FastAPI).
@@ -107,3 +108,39 @@ uvicorn main:app --reload
 ⚙️ Requirements
 To install the necessary Python environment:
 pip install -r requirements.txt
+
+---
+
+# 🖥️ Expected Web App Outputs & Features
+
+## 1. The Prediction Dashboard (The Core)
+This is the most important part of the app.
+
+- **Input Form:** Clean fields for Current Rainfall, Historical Average, and Previous Month's Rainfall.
+- **Risk Indicator:** A large, color-coded card that changes based on the model's result.
+  - 🔴 **HIGH RISK:** If the model predicts an outbreak.
+  - 🟢 **LOW RISK:** If the model predicts a normal month.
+- **Confidence Score:** A percentage showing how sure the model is (e.g., "82% Probability of Outbreak").
+
+## 2. The "Actionable Insights" Section
+Don't just give them a "High Risk" warning—tell them why and what to do.
+
+- **Key Driver Alert:**
+  - A text box that says: "Warning: The 15% increase in rainfall from last month (rfh_lag1) is the primary driver for this prediction."
+- **Recommended Actions:**
+  - Clear stagnant water in residential areas.
+  - Increase community fogging in identified hotspots.
+  - Distribute insecticide-treated nets.
+
+## 3. Interactive Data Visualizations
+Use charts to give the user context. Since you're using React, your groupmates can use libraries like Recharts or Chart.js.
+
+- **Regional Heatmap:** A map of the Philippines where regions are shaded darker based on current risk levels.
+- **Trend Line:** A graph showing historical Dengue cases vs. Rainfall for that specific month to show the user that "This happened in 2018 under similar weather conditions."
+
+## 4. Technical Transparency (The "Footnote")
+To make the app look professional and academic, include a small section at the bottom:
+
+- **Model Info:** "Powered by a Tuned Random Forest Classifier (77.6% Accuracy)."
+- **Data Source:** "Climate data provided by PAGASA/HDX; Health data provided by DOH."
+- **Last Updated:** The timestamp of the last data sync or model training.
