@@ -41,6 +41,13 @@ dengue-predictor/
 ├── requirements.txt           # Python Dependency List
 └── README.md                  # Project Documentation
 ```
+
+### Current Implementation
+The repository now includes a working backend and frontend slice that follows the README contract.
+
+* **Backend:** `web-app/backend/main.py` serves `/health`, `/model-info`, and `/predict`.
+* **Frontend:** `web-app/frontend` contains the React dashboard, prediction form, charts, and risk panels.
+* **Model artifact:** The backend trains and saves `models/dengue_model.joblib` and `models/dengue_model_metadata.joblib` on first run if they are missing.
 ---
 # 🛠️ Data Science Summary (Phases 1-5)
 
@@ -104,6 +111,13 @@ To serve the model, the backend team must run:
 
 cd web-app/backend
 uvicorn main:app --reload
+
+### 4. Frontend Execution
+To launch the dashboard, the frontend team must run:
+
+cd web-app/frontend
+npm install
+npm run dev
 
 ⚙️ Requirements
 To install the necessary Python environment:

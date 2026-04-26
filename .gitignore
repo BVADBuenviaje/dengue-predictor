@@ -24,6 +24,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+node_modules/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
